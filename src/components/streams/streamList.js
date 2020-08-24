@@ -15,7 +15,9 @@ class StreamList extends React.Component {
           {this.renderEditOptions(stream)}
           <i className="large middle aligned icon camera" />
           <div className="content">
-            {stream.title}
+            <Link to={`/streams/${stream.id}`} className="header">
+              {stream.title}
+            </Link>
             <div className="description">{stream.description}</div>
           </div>
         </div>
@@ -42,7 +44,10 @@ class StreamList extends React.Component {
           <Link to={`/streams/edit/${stream.id}`} className="ui button primary">
             Edit
           </Link>
-          <Link to="/streams/delete" className="ui button negative">
+          <Link
+            to={`/streams/delete/${stream.id}`}
+            className="ui button negative"
+          >
             Delete
           </Link>
         </div>
